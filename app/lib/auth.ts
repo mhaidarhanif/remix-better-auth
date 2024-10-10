@@ -1,6 +1,6 @@
-import { betterAuth } from "better-auth";
-import Database from "better-sqlite3";
-import { twoFactor, passkey } from "better-auth/plugins";
+import { betterAuth } from "better-auth"
+import { passkey, twoFactor } from "better-auth/plugins"
+import Database from "better-sqlite3"
 
 export const auth = betterAuth({
   database: new Database("./sqlite.db"),
@@ -9,10 +9,10 @@ export const auth = betterAuth({
     enabled: true,
     sendEmailVerificationOnSignUp: true,
     async sendVerificationEmail(email, url, token) {
-      console.log("Send email to", email, "with verification link", url);
+      console.log("Send email to", email, "with verification link", url)
     },
     async sendResetPassword(url, user) {
-      console.log("Send reset password email to", user.email, "with link", url);
+      console.log("Send reset password email to", user.email, "with link", url)
     },
   },
 
@@ -31,4 +31,4 @@ export const auth = betterAuth({
     // },
   },
   plugins: [twoFactor(), passkey()],
-});
+})

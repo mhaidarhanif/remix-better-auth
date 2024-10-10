@@ -4,11 +4,11 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix vite:build",
-    "auth:migrate": "better-auth migrate",
     "dev": "bun auth:migrate && remix vite:dev",
-    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "auth:migrate": "better-auth migrate",
+    "build": "remix vite:build",
     "start": "remix-serve ./build/server/index.js",
+    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "typecheck": "tsc"
   },
   "dependencies": {
@@ -73,6 +73,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
     "@remix-run/dev": "^2.12.1",
     "@types/node": "^22.7.5",
     "@types/react": "^18.2.20",
@@ -88,6 +89,9 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.38",
+    "prettier": "^3.3.3",
+    "prettier-plugin-packagejson": "^2.5.2",
+    "prettier-plugin-tailwindcss": "^0.6.8",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.1.6",
     "vite": "^5.1.0",
